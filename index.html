@@ -1,0 +1,1141 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>باغ جادویی نویسندگان کوچک</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800;900&display=swap');
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Vazirmatn,Tahoma,sans-serif;
+background:#f5f1ff;
+color:#39315f;
+}
+
+button,input,textarea{font-family:inherit}
+
+button{
+cursor:pointer;
+border:0;
+transition:.2s;
+}
+
+button:hover{transform:translateY(-3px)}
+
+header{
+background:linear-gradient(120deg,#6044aa,#a078dc,#ec91b8);
+color:white;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.logo{font-size:21px;font-weight:900}
+
+.stats{display:flex;gap:10px}
+
+.stat{
+background:#ffffff30;
+padding:10px 15px;
+border-radius:14px;
+font-weight:bold;
+}
+
+main{max-width:1150px;margin:auto;padding:20px}
+
+.hero{
+background:linear-gradient(130deg,#d8f5ff,#f6e3ff,#fff0d6);
+border-radius:28px;
+padding:30px;
+display:flex;
+justify-content:space-around;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.hero h1{color:#6749ae;line-height:1.8}
+
+.hero p{line-height:2}
+
+.art{font-size:100px;animation:float 3s infinite}
+
+@keyframes float{
+50%{transform:translateY(-13px)}
+}
+
+.primary{
+background:linear-gradient(120deg,#7955c7,#a17bdd);
+color:white;
+padding:13px 23px;
+border-radius:14px;
+font-size:15px;
+font-weight:bold;
+}
+
+.progress-box{
+background:white;
+padding:18px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.progress{
+height:15px;
+background:#eee8f9;
+border-radius:20px;
+overflow:hidden;
+margin-top:10px;
+}
+
+.progress span{
+display:block;
+height:100%;
+width:0;
+background:#63c99b;
+transition:.5s;
+}
+
+h2.title{margin-top:32px}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:17px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:22px;
+box-shadow:0 5px 18px #59418a15;
+transition:.3s;
+}
+
+.card:hover{transform:translateY(-5px)}
+
+.icon{font-size:43px}
+
+.card h3{margin:10px 0}
+
+.card p{color:#77718c;line-height:1.8}
+
+.card button{
+background:#eee8ff;
+color:#694da9;
+padding:10px 17px;
+border-radius:12px;
+font-weight:bold;
+}
+
+.panel{
+display:none;
+background:white;
+padding:25px;
+border-radius:24px;
+margin-top:25px;
+box-shadow:0 5px 20px #49337c12;
+animation:appear .3s;
+}
+
+@keyframes appear{
+from{opacity:0;transform:translateY(10px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+.panel h2{color:#7652bb}
+
+.example{
+background:#eff8ff;
+border-right:5px solid #6cbce0;
+padding:15px;
+border-radius:12px;
+line-height:2;
+margin:15px 0;
+}
+
+.options{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:12px;
+margin:18px 0;
+}
+
+.option{
+background:#f0eaff;
+padding:15px;
+border-radius:13px;
+color:#6448a5;
+font-weight:bold;
+}
+
+.option:disabled{cursor:default;opacity:.8}
+
+.correct{background:#c9f4dc!important;color:#176b43!important}
+.wrong{background:#ffe0e5!important;color:#a43e53!important}
+
+.feedback{
+display:none;
+padding:14px;
+border-radius:13px;
+margin-top:15px;
+line-height:1.9;
+}
+
+.good{background:#d9f7e5;color:#176d45}
+.bad{background:#ffe1e7;color:#a43d55}
+
+textarea,input{
+width:100%;
+padding:14px;
+border:2px solid #e5dcf5;
+border-radius:13px;
+font-size:16px;
+margin:10px 0;
+}
+
+textarea{resize:vertical}
+
+.secondary{
+background:#eee8f7;
+color:#6548a4;
+padding:12px 20px;
+border-radius:12px;
+margin:8px 3px;
+}
+
+.step{
+display:block;
+width:100%;
+padding:15px;
+margin:9px 0;
+background:#eee8ff;
+border-radius:13px;
+color:#6347a5;
+font-weight:bold;
+}
+
+.step.selected{background:#c7e9ff}
+
+footer{
+text-align:center;
+padding:30px;
+color:#766995;
+line-height:2;
+}
+
+.certificate{
+border:7px double #9c78d4;
+padding:30px;
+text-align:center;
+background:#fffaf0;
+border-radius:20px;
+}
+
+@media(max-width:600px){
+.hero{text-align:center}
+.hero h1{font-size:24px}
+.art{font-size:75px}
+header{justify-content:center}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">🌸 باغ جادویی نویسندگان کوچک</div>
+
+<div class="stats">
+<div class="stat">⭐ امتیاز: <span id="score">0</span></div>
+<div class="stat">🏅 مدال: <span id="medals">0</span></div>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div>
+<h1>سلام نویسنده خلاق! 🌈</h1>
+<p>
+آماده‌ای وارد دنیای شگفت‌انگیز انشانویسی شوی؟
+<br>
+بازی کن، یاد بگیر و ستاره جمع کن!
+</p>
+<button class="primary" onclick="show('learn')">
+🚀 شروع یادگیری
+</button>
+</div>
+<div class="art">📚🦋🌷</div>
+</section>
+
+<section class="progress-box">
+<strong>🌟 میزان پیشرفت تو</strong>
+<div class="progress"><span id="bar"></span></div>
+<p id="progressText">شروع یک ماجراجویی زیبا!</p>
+</section>
+
+<h2 class="title">🗺️ سرزمین بازی‌ها</h2>
+
+<section class="grid">
+
+<div class="card">
+<div class="icon">📖</div>
+<h3>آموزش انواع انشا</h3>
+<p>با انواع انشانویسی آشنا شو.</p>
+<button onclick="show('learn')">شروع آموزش</button>
+</div>
+
+<div class="card">
+<div class="icon">🍁</div>
+<h3>انتخاب موضوع مناسب</h3>
+<p>بهترین موضوع را برای انشا پیدا کن.</p>
+<button onclick="show('topic')">شروع بازی</button>
+</div>
+
+<div class="card">
+<div class="icon">🧩</div>
+<h3>مرتب‌سازی مراحل انشا</h3>
+<p>مراحل نوشتن یک انشای خوب را مرتب کن.</p>
+<button onclick="show('order')">شروع بازی</button>
+</div>
+
+<div class="card">
+<div class="icon">✅</div>
+<h3>درست یا نادرست</h3>
+<p>دانسته‌هایت را به چالش بکش.</p>
+<button onclick="show('truefalse')">شروع بازی</button>
+</div>
+
+<div class="card">
+<div class="icon">🎮</div>
+<h3>آزمون هوشمند</h3>
+<p>دانش خودت را امتحان کن.</p>
+<button onclick="show('quiz')">شروع آزمون</button>
+</div>
+
+<div class="card">
+<div class="icon">🗂️</div>
+<h3>فلش‌کارت‌های طلایی</h3>
+<p>نکات مهم درس را مرور کن.</p>
+<button onclick="show('cards')">مرور درس</button>
+</div>
+
+<div class="card">
+<div class="icon">✍️</div>
+<h3>دفتر نویسندگی</h3>
+<p>انشای خودت را بنویس.</p>
+<button onclick="show('writing')">نوشتن انشا</button>
+</div>
+
+<div class="card">
+<div class="icon">🏆</div>
+<h3>گواهی پایان دوره</h3>
+<p>گواهی نویسنده خلاق را دریافت کن.</p>
+<button onclick="show('certificate')">دریافت گواهی</button>
+</div>
+
+</section>
+
+<!-- آموزش -->
+
+<section class="panel" id="learn">
+
+<h2>📚 آموزش انواع انشا</h2>
+
+<div class="example">
+<b>۱. انشای توصیفی 🔍</b><br>
+در این نوع انشا ویژگی‌های یک شخص، شیء، مکان یا پدیده را با جزئیات بیان می‌کنیم.
+
+<br><br>
+مثال: توصیف یک درخت در فصل پاییز.
+</div>
+
+<div class="example">
+<b>۲. خاطره‌نویسی 📔</b><br>
+در خاطره‌نویسی اتفاقات واقعی زندگی و احساسات خود را می‌نویسیم.
+
+<br><br>
+مثال: خاطره اولین روز مدرسه.
+</div>
+
+<div class="example">
+<b>۳. داستان‌نویسی 📖</b><br>
+در داستان‌نویسی شخصیت‌ها و اتفاقات را در قالب یک ماجرا بیان می‌کنیم.
+
+<br><br>
+مثال: سفر یک پروانه به سرزمین گل‌ها.
+</div>
+
+<h3>🌟 نکته طلایی</h3>
+
+<p>برای نوشتن یک انشای خوب، ابتدا موضوع را انتخاب کن، فکرهایت را مرتب کن و سپس بنویس.</p>
+
+<button class="primary" onclick="complete('learn')">یاد گرفتم ⭐</button>
+
+</section>
+
+<!-- انتخاب موضوع -->
+
+<section class="panel" id="topic">
+
+<h2>🍁 بازی انتخاب موضوع مناسب</h2>
+
+<p>موضوع کلی ما «پاییز» است.</p>
+
+<h3>کدام گزینه موضوعی کوچک‌تر و مشخص‌تر برای انشانویسی است؟</h3>
+
+<div class="options" id="topicOptions">
+
+<button class="option" onclick="topicAnswer(this,false)">همه چیز درباره طبیعت</button>
+
+<button class="option" onclick="topicAnswer(this,true)">صدای باران پاییزی پشت پنجره</button>
+
+<button class="option" onclick="topicAnswer(this,false)">تمام فصل‌های سال</button>
+
+<button class="option" onclick="topicAnswer(this,false)">جهان و کهکشان‌ها</button>
+
+</div>
+
+<div id="topicFeedback" class="feedback"></div>
+
+<button class="secondary" onclick="resetTopic()">تلاش دوباره</button>
+
+</section>
+
+<!-- مرتب سازی -->
+
+<section class="panel" id="order">
+
+<h2>🧩 مرتب‌سازی مراحل انشانویسی</h2>
+
+<p>روی گزینه‌ها به ترتیب درست کلیک کن.</p>
+
+<p>ابتدا باید موضوع را انتخاب کنیم، سپس فکرها را مرتب کنیم و در پایان بنویسیم و بازبینی کنیم.</p>
+
+<div id="orderArea"></div>
+
+<button class="primary" onclick="checkOrder()">بررسی پاسخ ⭐</button>
+
+<button class="secondary" onclick="resetOrder()">شروع دوباره</button>
+
+<div id="orderFeedback" class="feedback"></div>
+
+</section>
+
+<!-- درست نادرست -->
+
+<section class="panel" id="truefalse">
+
+<h2>✅ بازی درست یا نادرست</h2>
+
+<h3 id="tfQuestion"></h3>
+
+<div class="options">
+<button class="option" onclick="tfAnswer(true)">درست ✅</button>
+<button class="option" onclick="tfAnswer(false)">نادرست ❌</button>
+</div>
+
+<div id="tfFeedback" class="feedback"></div>
+
+<p id="tfCount"></p>
+
+<button class="secondary" onclick="startTF()">شروع دوباره</button>
+
+</section>
+
+<!-- آزمون -->
+
+<section class="panel" id="quiz">
+
+<h2>🏆 آزمون بزرگ نویسندگان کوچک</h2>
+
+<p>به ۶ سؤال پاسخ بده و امتیاز کسب کن.</p>
+
+<div id="quizArea"></div>
+
+<div id="quizResult"></div>
+
+<button class="primary" id="quizStart" onclick="startQuiz()">شروع آزمون</button>
+
+</section>
+
+<!-- فلش کارت -->
+
+<section class="panel" id="cards">
+
+<h2>🗂️ فلش‌کارت‌های طلایی</h2>
+
+<div style="text-align:center;font-size:65px" id="flashIcon">📖</div>
+
+<h3 id="flashTitle" style="text-align:center"></h3>
+
+<div class="example" id="flashText"></div>
+
+<button class="primary" onclick="nextFlash()">کارت بعدی ←</button>
+
+</section>
+
+<!-- دفتر نویسندگی -->
+
+<section class="panel" id="writing">
+
+<h2>✍️ دفتر نویسندگی من</h2>
+
+<label>نام نویسنده:</label>
+<input id="studentName" placeholder="نام خود را بنویس">
+
+<label>عنوان انشا:</label>
+<input id="essayTitle" placeholder="عنوان انشا">
+
+<label>متن انشا:</label>
+<textarea id="essay" rows="8" placeholder="انشای زیبای خود را بنویس..."></textarea>
+
+<button class="primary" onclick="saveEssay()">ذخیره انشا 💾</button>
+
+<button class="secondary" onclick="printEssay()">چاپ انشا 🖨️</button>
+
+<div id="essayFeedback" class="feedback good"></div>
+
+</section>
+
+<!-- گواهی -->
+
+<section class="panel" id="certificate">
+
+<h2>🎓 گواهی نویسنده خلاق</h2>
+
+<div class="certificate">
+
+<div style="font-size:65px">🏆🌸</div>
+
+<h2>گواهی پایان دوره</h2>
+
+<p>تقدیم به نویسنده خلاق:</p>
+
+<input id="certificateName" placeholder="نام دانش‌آموز">
+
+<h3>به پاس تلاش و یادگیری هنر انشانویسی</h3>
+
+<p>🌟 باغ جادویی نویسندگان کوچک 🌟</p>
+
+<p>طراح: سعیده محمودیان</p>
+
+<button class="primary" onclick="printCertificate()">چاپ گواهی</button>
+
+</div>
+
+</section>
+
+<footer>
+🌷 با خیال‌پردازی بنویس، با نوشتن بدرخش! 🌷
+<br>
+طراح: سعیده محمودیان
+</footer>
+
+</main>
+
+<script>
+
+// اطلاعات ذخیره شده
+
+let data=JSON.parse(localStorage.getItem('writerData')||'{}');
+
+let score=data.score||0;
+let medals=data.medals||0;
+let completed=data.completed||[];
+
+function update(){
+
+document.getElementById('score').textContent=score;
+document.getElementById('medals').textContent=medals;
+
+let p=Math.round(completed.length/7*100);
+
+document.getElementById('bar').style.width=p+'%';
+
+document.getElementById('progressText').textContent=
+p+'٪ از مسیر یادگیری تکمیل شده است.';
+
+localStorage.setItem('writerData',JSON.stringify({
+score,medals,completed
+}));
+
+}
+
+function addScore(n){
+score+=n;
+update();
+}
+
+function show(id){
+
+document.querySelectorAll('.panel').forEach(x=>{
+x.style.display='none';
+});
+
+let p=document.getElementById(id);
+
+p.style.display='block';
+
+p.scrollIntoView({behavior:'smooth'});
+}
+
+function complete(id){
+
+if(!completed.includes(id)){
+completed.push(id);
+score+=10;
+medals++;
+update();
+}
+
+alert('آفرین! این مرحله را با موفقیت تمام کردی! 🌟');
+
+}
+
+// بازی انتخاب موضوع
+
+let topicDone=false;
+
+function topicAnswer(btn,correct){
+
+if(topicDone)return;
+
+topicDone=true;
+
+let f=document.getElementById('topicFeedback');
+
+f.style.display='block';
+
+if(correct){
+
+btn.classList.add('correct');
+
+f.className='feedback good';
+f.textContent='آفرین! موضوعی مشخص و مناسب انتخاب کردی. ⭐';
+
+addScore(10);
+
+}else{
+
+btn.classList.add('wrong');
+
+f.className='feedback bad';
+f.textContent='این موضوع خیلی کلی است. دوباره فکر کن!';
+
+}
+
+}
+
+function resetTopic(){
+
+topicDone=false;
+
+document.querySelectorAll('#topicOptions button').forEach(b=>{
+b.classList.remove('correct','wrong');
+});
+
+document.getElementById('topicFeedback').style.display='none';
+
+}
+
+// بازی مرتب سازی
+
+const correctOrder=[
+'انتخاب موضوع',
+'جمع‌آوری فکرها و ایده‌ها',
+'مرتب‌کردن ایده‌ها',
+'نوشتن انشا',
+'بازبینی و اصلاح نوشته'
+];
+
+const mixedOrder=[
+'نوشتن انشا',
+'انتخاب موضوع',
+'بازبینی و اصلاح نوشته',
+'جمع‌آوری فکرها و ایده‌ها',
+'مرتب‌کردن ایده‌ها'
+];
+
+let selected=[];
+
+function renderOrder(){
+
+selected=[];
+
+document.getElementById('orderArea').innerHTML=
+mixedOrder.map(x=>
+`<button class="step" onclick="selectStep(this,'${x}')">${x}</button>`
+).join('');
+
+document.getElementById('orderFeedback').style.display='none';
+
+}
+
+function selectStep(btn,value){
+
+if(selected.includes(value))return;
+
+selected.push(value);
+
+btn.classList.add('selected');
+
+btn.textContent=selected.length+'. '+value;
+
+}
+
+function checkOrder(){
+
+let f=document.getElementById('orderFeedback');
+
+f.style.display='block';
+
+if(selected.length!==5){
+
+f.className='feedback bad';
+f.textContent='ابتدا همه پنج مرحله را انتخاب کن.';
+
+return;
+
+}
+
+if(selected.every((x,i)=>x===correctOrder[i])){
+
+f.className='feedback good';
+f.textContent='عالی! همه مراحل را درست مرتب کردی! 🌟';
+
+if(!completed.includes('order')){
+complete('order');
+addScore(15);
+}
+
+}else{
+
+f.className='feedback bad';
+f.textContent='ترتیب درست نیست. دوباره تلاش کن!';
+
+}
+
+}
+
+function resetOrder(){
+
+renderOrder();
+
+}
+
+renderOrder();
+
+// بازی درست و نادرست
+
+const tfQuestions=[
+
+['در انشای توصیفی، ویژگی‌های یک مکان را بیان می‌کنیم.',true],
+
+['خاطره‌نویسی درباره اتفاقات واقعی زندگی است.',true],
+
+['داستان‌نویسی فقط درباره اتفاقات واقعی است.',false],
+
+['موضوع «همه چیز درباره دنیا» موضوعی بسیار مشخص است.',false],
+
+['در داستان‌نویسی می‌توان از شخصیت‌های خیالی استفاده کرد.',true],
+
+['بازبینی نوشته یکی از مراحل انشانویسی است.',true]
+
+];
+
+let tfIndex=0;
+let tfScore=0;
+let tfFinished=false;
+
+function startTF(){
+
+tfIndex=0;
+tfScore=0;
+tfFinished=false;
+
+renderTF();
+
+}
+
+function renderTF(){
+
+if(tfIndex>=tfQuestions.length){
+
+tfFinished=true;
+
+document.getElementById('tfQuestion').textContent=
+'🎉 بازی تمام شد!';
+
+document.getElementById('tfFeedback').style.display='block';
+
+document.getElementById('tfFeedback').className='feedback good';
+
+document.getElementById('tfFeedback').textContent=
+'تعداد پاسخ‌های درست: '+tfScore+' از ۶';
+
+document.getElementById('tfCount').textContent=
+'امتیاز این بازی: '+(tfScore*5);
+
+if(!completed.includes('tf')){
+completed.push('tf');
+medals++;
+addScore(tfScore*5);
+update();
+}
+
+return;
+
+}
+
+document.getElementById('tfQuestion').textContent=
+tfQuestions[tfIndex][0];
+
+document.getElementById('tfFeedback').style.display='none';
+
+document.getElementById('tfCount').textContent=
+'سؤال '+(tfIndex+1)+' از ۶';
+
+}
+
+function tfAnswer(ans){
+
+if(tfFinished)return;
+
+let f=document.getElementById('tfFeedback');
+
+f.style.display='block';
+
+if(ans===tfQuestions[tfIndex][1]){
+
+tfScore++;
+
+f.className='feedback good';
+f.textContent='آفرین! پاسخ درست است. ⭐';
+
+}else{
+
+f.className='feedback bad';
+f.textContent='این پاسخ درست نبود. با دقت بیشتری فکر کن.';
+
+}
+
+setTimeout(()=>{
+
+tfIndex++;
+renderTF();
+
+},1100);
+
+}
+
+startTF();
+
+// آزمون
+
+const questions=[
+
+{
+q:'کدام گزینه نمونه انشای توصیفی است؟',
+a:['خاطره سفر تابستانی','توصیف یک باغ زیبا','داستان یک اژدها','خاطره تولد'],
+c:1,
+why:'در انشای توصیفی ویژگی‌های یک مکان را بیان می‌کنیم.'
+},
+
+{
+q:'در خاطره‌نویسی چه چیزی اهمیت دارد؟',
+a:['ثبت اتفاقات واقعی','ساخت شخصیت خیالی','نوشتن معما','فقط توصیف رنگ‌ها'],
+c:0,
+why:'خاطره‌نویسی درباره تجربه‌های واقعی زندگی است.'
+},
+
+{
+q:'کدام گزینه داستان‌نویسی است؟',
+a:['توصیف درخت','خاطره مدرسه','ماجرای یک پرنده سخنگو','توصیف کلاس'],
+c:2,
+why:'داستان می‌تواند شخصیت‌ها و اتفاقات خیالی داشته باشد.'
+},
+
+{
+q:'هدف از کوچک‌سازی موضوع چیست؟',
+a:['گسترده‌تر کردن موضوع','مشخص‌تر کردن موضوع','حذف عنوان','کوتاه کردن همه جمله‌ها'],
+c:1,
+why:'موضوع کوچک و مشخص، نوشتن را آسان‌تر می‌کند.'
+},
+
+{
+q:'کدام مورد یکی از مراحل انشانویسی است؟',
+a:['بازبینی نوشته','حذف موضوع','بی‌توجهی به ایده‌ها','نوشتن بدون فکر'],
+c:0,
+why:'پس از نوشتن باید متن را بازبینی و اصلاح کنیم.'
+},
+
+{
+q:'در کیسه جادویی چه کاری انجام می‌دهیم؟',
+a:['محاسبه عددها','انتخاب یک شیء و ایده‌پردازی','حفظ کردن شعر','حل جدول'],
+c:1,
+why:'کیسه جادویی روشی برای تقویت تخیل و ایده‌پردازی است.'
+}
+
+];
+
+let qi=0;
+let quizScore=0;
+let quizAnswered=false;
+let quizFinished=false;
+
+function startQuiz(){
+
+qi=0;
+quizScore=0;
+quizAnswered=false;
+quizFinished=false;
+
+document.getElementById('quizResult').innerHTML='';
+
+document.getElementById('quizStart').style.display='none';
+
+renderQuiz();
+
+}
+
+function renderQuiz(){
+
+if(qi>=questions.length){
+
+quizFinished=true;
+
+let percent=Math.round(quizScore/questions.length*100);
+
+document.getElementById('quizArea').innerHTML=`
+<div class="certificate">
+<h2>🎉 آزمون تمام شد!</h2>
+<h1>${percent}٪</h1>
+<p>پاسخ صحیح: ${quizScore} از ۶</p>
+<p>امتیاز این آزمون: ${quizScore*10}</p>
+<p>${percent>=80?'آفرین! فوق‌العاده بودی! 🌟':'تلاش خوبی بود! دوباره درس را مرور کن.'}</p>
+</div>`;
+
+if(!completed.includes('quiz')){
+completed.push('quiz');
+medals++;
+addScore(quizScore*10);
+update();
+}
+
+document.getElementById('quizStart').style.display='block';
+document.getElementById('quizStart').textContent='شرکت مجدد در آزمون';
+
+return;
+
+}
+
+quizAnswered=false;
+
+let q=questions[qi];
+
+document.getElementById('quizArea').innerHTML=`
+<h3>سؤال ${qi+1} از ۶</h3>
+<p>${q.q}</p>
+<div class="options">
+${q.a.map((x,i)=>`
+<button class="option" onclick="answerQuiz(${i})">${x}</button>
+`).join('')}
+</div>
+<div id="quizFeedback" class="feedback"></div>
+`;
+
+}
+
+function answerQuiz(ans){
+
+if(quizAnswered)return;
+
+quizAnswered=true;
+
+let q=questions[qi];
+
+let f=document.getElementById('quizFeedback');
+
+f.style.display='block';
+
+document.querySelectorAll('#quizArea .option').forEach((b,i)=>{
+
+b.disabled=true;
+
+if(i===q.c)b.classList.add('correct');
+
+if(i===ans && ans!==q.c)b.classList.add('wrong');
+
+});
+
+if(ans===q.c){
+
+quizScore++;
+
+f.className='feedback good';
+f.textContent='آفرین! پاسخ درست است. '+q.why;
+
+}else{
+
+f.className='feedback bad';
+f.textContent='پاسخ صحیح: '+q.a[q.c]+' . '+q.why;
+
+}
+
+let next=document.createElement('button');
+
+next.className='primary';
+next.textContent=qi===5?'دیدن نتیجه':'سؤال بعدی';
+
+next.style.marginTop='15px';
+
+next.onclick=()=>{
+
+qi++;
+renderQuiz();
+
+};
+
+document.getElementById('quizArea').appendChild(next);
+
+}
+
+// فلش کارت
+
+const flashcards=[
+
+['📖','انشای توصیفی','ویژگی‌های یک شخص، شیء یا مکان را با جزئیات بیان می‌کنیم.'],
+
+['📔','خاطره‌نویسی','اتفاقات واقعی زندگی و احساسات خود را ثبت می‌کنیم.'],
+
+['📚','داستان‌نویسی','شخصیت‌ها و اتفاقات را در قالب یک ماجرا بیان می‌کنیم.'],
+
+['🍂','کوچک‌سازی موضوع','موضوع کلی را به موضوعی مشخص‌تر تبدیل می‌کنیم.'],
+
+['✍️','بازبینی انشا','پس از نوشتن، نوشته را بررسی و اشتباهات را اصلاح می‌کنیم.'],
+
+['💡','ایده‌پردازی','پیش از نوشتن، فکرها و ایده‌های خود را جمع‌آوری می‌کنیم.']
+
+];
+
+let flashIndex=0;
+
+function nextFlash(){
+
+flashIndex=(flashIndex+1)%flashcards.length;
+
+let f=flashcards[flashIndex];
+
+document.getElementById('flashIcon').textContent=f[0];
+document.getElementById('flashTitle').textContent=f[1];
+document.getElementById('flashText').textContent=f[2];
+
+}
+
+nextFlash();
+
+// دفتر نویسندگی
+
+function saveEssay(){
+
+let name=document.getElementById('studentName').value.trim();
+let title=document.getElementById('essayTitle').value.trim();
+let text=document.getElementById('essay').value.trim();
+
+if(!name||!title||text.length<30){
+
+alert('نام، عنوان و متن انشا را کامل وارد کن.');
+
+return;
+
+}
+
+localStorage.setItem('myEssay',JSON.stringify({
+name,title,text
+}));
+
+addScore(10);
+
+let f=document.getElementById('essayFeedback');
+
+f.style.display='block';
+f.textContent='انشای تو با موفقیت ذخیره شد! 🌷';
+
+}
+
+function printEssay(){
+
+let title=document.getElementById('essayTitle').value;
+let name=document.getElementById('studentName').value;
+let essay=document.getElementById('essay').value;
+
+if(!essay.trim()){
+alert('ابتدا انشای خود را بنویس.');
+return;
+}
+
+let w=window.open('','_blank');
+
+w.document.write(`
+<html dir="rtl">
+<meta charset="UTF-8">
+<body style="font-family:tahoma;padding:40px;line-height:2">
+<h2>${title}</h2>
+<p>نویسنده: ${name}</p>
+<hr>
+<p>${essay.replace(/\n/g,'<br>')}</p>
+</body></html>`);
+
+w.document.close();
+w.print();
+
+}
+
+// گواهی
+
+function printCertificate(){
+
+let name=document.getElementById('certificateName').value.trim();
+
+if(!name){
+alert('نام دانش‌آموز را وارد کن.');
+return;
+}
+
+let w=window.open('','_blank');
+
+w.document.write(`
+<html dir="rtl">
+<meta charset="UTF-8">
+<body style="font-family:tahoma;text-align:center;padding:50px;background:#fffaf0">
+<div style="border:8px double #9870ca;padding:40px">
+<h1 style="color:#7954b9">🏆 گواهی پایان دوره 🏆</h1>
+<h2>نویسنده خلاق</h2>
+<h2>${name}</h2>
+<p>به پاس تلاش و یادگیری هنر انشانویسی</p>
+<h3>باغ جادویی نویسندگان کوچک 🌸</h3>
+<p>طراح: سعیده محمودیان</p>
+</div>
+</body></html>`);
+
+w.document.close();
+w.print();
+
+}
+
+update();
+
+</script>
+
+</body>
+</html>
